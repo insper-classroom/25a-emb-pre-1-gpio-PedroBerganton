@@ -5,8 +5,7 @@
 const int BTN_PIN = 26;
 const int BTN_PIN2 = 7;
 
-int main()
-{
+int main(){
   stdio_init_all();
 
   gpio_init(BTN_PIN);
@@ -17,21 +16,14 @@ int main()
   gpio_set_dir(BTN_PIN2, GPIO_IN); // in e entrada
   gpio_pull_up(BTN_PIN2);          // pull-up da energia pro botao iniciar
 
-  while (true)
-  {
-    if (!gpio_get(BTN_PIN))
-    {
+  while (true){
+    if (!gpio_get(BTN_PIN)){
       printf("Botao 1\n");
-      while (!gpio_get(BTN_PIN)) // aguarda soltar o botao
-      {
-      };
+      while (!gpio_get(BTN_PIN)); // aguarda soltar o botao
     }
-    if (!gpio_get(BTN_PIN2))
-    {
+    if (!gpio_get(BTN_PIN2)){
       printf("Botao 2\n");
-      while (!gpio_get(BTN_PIN2))
-      {
-      };
+      while (!gpio_get(BTN_PIN2));
     }
   }
 }
